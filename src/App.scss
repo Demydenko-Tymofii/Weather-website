@@ -1,0 +1,235 @@
+$primary: #ccc;
+$main: #252627;
+$second: #1f1f1f;
+$third: #181818;
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  user-select: none;
+  margin: 0;
+}
+
+strong {
+  font-size: 1.5em;
+}
+
+body {
+  background-color: $third;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  width: 100%;
+  max-width: 720px;
+}
+
+.City {
+  color: $primary;
+  font-size: 2em;
+  // padding: 32px;
+  margin: 32px 32px 0 32px;
+}
+.MinMax {
+  color: $primary;
+  margin: 16px 32px 0 32px;
+}
+.CurrentInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0px 48px;
+
+  .Temp {
+    color: $primary;
+    font-size: 5em;
+  }
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+.Feel {
+  color: $primary;
+  font-size: 1.5em;
+  // margin: 48px 0 32px 16px;
+  // margin: 32px 0 32px 32px;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.Tabs {
+  display: flex;
+  justify-content: center;
+  div {
+    background-color: $main;
+
+    display: flex;
+    gap: 4px;
+
+    padding: 4px 4px 0px 4px;
+    border-radius: 7px 7px 0 0;
+    button {
+      background-color: $second;
+
+      transition: background-color 0.1s;
+
+      border-radius: 3px 3px 0 0;
+
+      padding: 12px;
+      outline: 0;
+      border: 0;
+    }
+    button:hover {
+      background-color: $main;
+    }
+    button.Selected {
+      background-color: $third;
+    }
+  }
+}
+
+.HourlyForecast {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  .List {
+    background-color: $main;
+    border-radius: 7px;
+
+    padding: 4px;
+    display: flex;
+    width: 100%;
+    max-width: 720px;
+    overflow-x: auto;
+
+    gap: 4px;
+
+    .Card {
+      background-color: $second;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      border-radius: 3px;
+      width: 100%;
+
+      min-width: 72px;
+
+      p {
+        // font-weight: 400;
+        margin: 16px 0;
+      }
+      img {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+}
+
+.DayForecast {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  .List {
+    background-color: $main;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 720px;
+
+    border-radius: 7px;
+    gap: 4px;
+    padding: 4px;
+    .Day {
+      background-color: $second;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+
+      .Container {
+        max-width: 640px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-radius: 3px;
+        img {
+          width: 42px;
+          height: 42px;
+        }
+
+        padding: 0 4px;
+
+        display: grid;
+        grid-template-columns: 7fr 1fr 6fr 6fr;
+        grid-template-rows: 1fr;
+        gap: 4px;
+        grid-auto-flow: row;
+        grid-template-areas: "Weekday Icon Description Temp";
+
+        .Weekday {
+          grid-area: Weekday;
+        }
+        .Icon {
+          grid-area: Icon;
+        }
+        .Description {
+          grid-area: Description;
+          overflow-x: hidden;
+          p {
+            width: max-content;
+          }
+        }
+        .Temp {
+          grid-area: Temp;
+          display: flex;
+          justify-content: end;
+        }
+      }
+    }
+  }
+}
+
+.Data {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 3px;
+  .Cell {
+    border: 1px solid #fff1;
+    border-radius: 3px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+footer {
+  height: 64px;
+}
